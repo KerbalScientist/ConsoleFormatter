@@ -114,7 +114,7 @@ class Formatter
     }
 
     /**
-     * Writes formetted output to console.
+     * Writes formatted output to console.
      * @see Formatter::format()
      * @param string $text
      */
@@ -124,7 +124,7 @@ class Formatter
     }
 
     /**
-     * Writes formetted output to console with new line at the end.
+     * Writes formatted output to console with new line at the end.
      * @see Formatter::format()
      * @param string $text
      */
