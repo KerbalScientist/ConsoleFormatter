@@ -137,7 +137,7 @@ class Formatter
     {
         $escaped_start = substr($match, 0, strlen($this->startToken) + strlen($this->escapeToken));
         if ($escaped_start === $this->escapeToken . $this->startToken) {
-            return substr($match, 0, strlen($this->escapeToken));
+            return substr($match, strlen($this->escapeToken));
         }
         return null;
     }
