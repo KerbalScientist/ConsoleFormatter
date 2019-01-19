@@ -33,7 +33,7 @@ class FormatterTest extends TestCase
      */
     public function testFormat($input, $output, $message, Formatter $formatter)
     {
-        $this->assertSame($formatter->format($input), $output, $message);
+        $this->assertSame($output, $formatter->format($input), $message);
     }
 
     /**
