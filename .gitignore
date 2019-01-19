@@ -1,2 +1,4 @@
-.idea
-test.php
+/.idea
+/test.php
+/vendor/
+/composer.lock

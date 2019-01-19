@@ -1,0 +1,23 @@
+{
+  "name": "kstools/console-formatter",
+  "description": "Minimalistic console text formatter",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Anton Balovnev",
+      "email": "an43.bal@gmail.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {},
+  "require-dev": {
+    "phpunit/phpunit": "^7.5",
+    "phpunit/php-invoker": "^2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "KSTools\\Console\\": "src"
+    }
+  }
+}
