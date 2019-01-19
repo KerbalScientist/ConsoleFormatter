@@ -94,8 +94,8 @@ class Formatter
         $delimiter = preg_quote($this->delimiter, '~');
         $end = preg_quote($this->endToken, '~');
         $pattern = "~$escape?$start(?'options'[\w$delimiter-]+)$end~";
-
-        return preg_replace_callback($pattern, function ($matches) {
+        $anyTokenReplaced = false;
+        return preg_replace_callback($pattern, function ($matches) use (& $anyTokenReplaced) {
                 $escaped = $this->detectEscaped($matches[0]);
                 if ($escaped) {
                     return $escaped;
@@ -109,8 +109,9 @@ class Formatter
                         return $matches[0];
                     }
                 }
+                $anyTokenReplaced = true;
                 return self::START_SEQUENCE . implode(';', $codes) . self::END_SEQUENCE;
-            }, $text) . self::RESET_SEQUENCE;
+            }, $text) . ($anyTokenReplaced ? self::RESET_SEQUENCE : '');
     }
 
     /**
