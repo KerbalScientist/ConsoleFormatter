@@ -18,6 +18,10 @@ class FormatterTest extends TestCase
             ['##red,bg-red:Text', "#red,bg-red:Text", 'Escaped'],
             ['#red,#bg-red::Text', "#red,\e[41m:Text\e[0m", 'Nested'],
             ['#--not-existing:Text', "#--not-existing:Text", 'Non-existing option'],
+            [NULL, '', 'Null'],
+            [false, '', 'False'],
+            [1, '1', 'Int'],
+            [0.0, '0', 'Double'],
         ];
     }
 
