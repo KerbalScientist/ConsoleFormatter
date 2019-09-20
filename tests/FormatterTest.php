@@ -40,23 +40,4 @@ class FormatterTest extends TestCase
         $this->assertSame($output, $formatter->format($input), $message);
     }
 
-    /**
-     * @dataProvider formatProvider
-     * @depends  testHasFormatMethod
-     */
-    public function testWrite($input, $output, $message, Formatter $formatter)
-    {
-        $this->expectOutputString($output);
-        $formatter->write($input);
-    }
-
-    /**
-     * @dataProvider formatProvider
-     * @depends  testHasFormatMethod
-     */
-    public function testWriteln($input, $output, $message, Formatter $formatter)
-    {
-        $this->expectOutputString($output . PHP_EOL);
-        $formatter->writeln($input);
-    }
 }

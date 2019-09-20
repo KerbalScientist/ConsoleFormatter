@@ -114,26 +114,6 @@ class Formatter
             }, $text) . ($anyTokenReplaced ? self::RESET_SEQUENCE : '');
     }
 
-    /**
-     * Writes formatted output to console.
-     * @see Formatter::format()
-     * @param string $text
-     */
-    public function write($text)
-    {
-        echo $this->format($text);
-    }
-
-    /**
-     * Writes formatted output to console with new line at the end.
-     * @see Formatter::format()
-     * @param string $text
-     */
-    public function writeln($text)
-    {
-        echo $this->format($text) . PHP_EOL;
-    }
-
     protected function detectEscaped($match)
     {
         $escaped_start = substr($match, 0, strlen($this->startToken) + strlen($this->escapeToken));
